@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobHunter - Job Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-row">
+      <div>
+        <h1 class="logo">JobHunter</h1>
+        <p class="tag">Find internships & jobs fast 🚀</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span id="totalJobs">0</span>
+          <small>Jobs</small>
+        </div>
+        <div class="stat">
+          <span id="savedCount">0</span>
+          <small>Saved</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <!-- Filters -->
+    <section class="card filters">
+      <h2>Search & Filter</h2>
+
+      <div class="field">
+        <label>Search (Role/Company)</label>
+        <input id="searchInput" type="text" placeholder="e.g., MERN Intern, Frontend, TCS..." />
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Location</label>
+          <select id="locationFilter">
+            <option value="all">All</option>
+            <option value="Indore">Indore</option>
+            <option value="Bhopal">Bhopal</option>
+            <option value="Remote">Remote</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Type</label>
+          <select id="typeFilter">
+            <option value="all">All</option>
+            <option value="Internship">Internship</option>
+            <option value="Full-time">Full-time</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="clearBtn" class="btn secondary">Clear</button>
+        <button id="showSavedBtn" class="btn">Show Saved</button>
+      </div>
+    </section>
+
+    <!-- Jobs list -->
+    <section class="card">
+      <div class="jobs-head">
+        <h2>Latest Jobs</h2>
+        <button id="addDemoBtn" class="btn outline">Add Demo Jobs</button>
+      </div>
+
+      <div id="jobsList" class="jobs"></div>
+      <p id="emptyState" class="empty">No jobs found. Try different filters.</p>
+    </section>
+  </main>
+
+  <!-- Apply Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="modalTitle">Apply</h3>
+        <button id="closeModal" class="icon-btn">✕</button>
+      </div>
+
+      <form id="applyForm" class="form">
+        <div class="field">
+          <label>Full Name</label>
+          <input id="name" type="text" placeholder="Ganesh Birla" required />
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Email</label>
+            <input id="email" type="email" placeholder="ganesh@gmail.com" required />
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input id="phone" type="tel" placeholder="82694xxxxx" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Why should we hire you? (short)</label>
+          <textarea id="message" rows="4" placeholder="I am a quick learner..." required></textarea>
+        </div>
+
+        <button class="btn full" type="submit">Submit Application</button>
+        <p id="formMsg" class="form-msg"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Made by Ganesh Birla • HTML • CSS • JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
